@@ -9,7 +9,7 @@ const notes = require('./notes.js');
 const _ = require('lodash');
 
 
-var filterArray =  _.uniq([ 'Hridika',15,'Hridika', 1, 2, 3,3]);
+var filterArray =  _.uniq([ 'mdsmai',1,'Hridika', 1, 2, 3,3]);
 console.log(filterArray);
 
 // console.log(_.isString(true));
