@@ -1,16 +1,29 @@
 console.log('Starting apps');
 
 const fs = require('fs');
-
-const os = require('os');
-
-const notes = require('./notes.js');
-
 const _ = require('lodash');
 
 
-var filterArray =  _.uniq([ 'mdsmai',1,'Hridika', 1, 2, 3,3]);
-console.log(filterArray);
+const notes = require('./notes.js');
+
+var command = process.argv[2];
+
+console.log('command:', command);
+
+if (command === 'add') {
+
+  console.log('Adding New Notes');
+
+} else if (command === 'list') {
+  console.log('Listing of all Notes');
+}else {
+  console.log('command Not Recognize');
+}
+
+//console.log(process.argv);
+
+// var filterArray =  _.uniq([ 'mdsmai',1,'Hridika', 1, 2, 3,3]);
+// console.log(filterArray);
 
 // console.log(_.isString(true));
 // console.log(_.isString('mdsami'));
