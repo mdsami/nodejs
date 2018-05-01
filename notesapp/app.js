@@ -2,11 +2,19 @@ console.log('Starting apps');
 
 const fs = require('fs');
 const _ = require('lodash');
+const yargs = require('yargs');
 
 
 const notes = require('./notes.js');
 
+const argv = yargs.argv;
 var command = process.argv[2];
+
+
+
+
+console.log('process',process.argv);
+console.log('Yagrs', argv);
 
 console.log('command:', command);
 
@@ -16,11 +24,16 @@ if (command === 'add') {
 
 } else if (command === 'list') {
   console.log('Listing of all Notes');
+
+}else if (command === 'read') {
+  console.log('Reading notes');
+}else if (command === 'remove') {
+  console.log('Removing notes');
 }else {
   console.log('command Not Recognize');
 }
 
-//console.log(process.argv);
+
 
 // var filterArray =  _.uniq([ 'mdsmai',1,'Hridika', 1, 2, 3,3]);
 // console.log(filterArray);
