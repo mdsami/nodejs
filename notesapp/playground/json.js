@@ -1,9 +1,15 @@
-var Obj = {
+// var Obj = {
+//
+//   name: "mdsami"
+// }
+//
+// var stringObj = JSON.stringify(Obj);
+//
+// console.log(typeof stringObj);
+// console.log(stringObj);
 
-  name: "mdsami"
-}
+var personString = '{"name": "mdsami", "age" :24}';
+var person = JSON.parse(personString);
 
-var stringObj = JSON.stringify(Obj);
-
-console.log(typeof stringObj);
-console.log(stringObj);
+console.log(typeof person);
+console.log(person);
