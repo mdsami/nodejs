@@ -8,28 +8,33 @@ const yargs = require('yargs');
 const notes = require('./notes.js');
 
 const argv = yargs.argv;
-var command = process.argv[2];
+// var command = process.argv[2];
+var command = argv._[0];
+
+let str = 'i love you Soooooooo  damn much  Hridika';
+for (let char of str) {
+  console.log(char);
+}
 
 
-
-
-console.log('process',process.argv);
+// console.log('process',process.argv);
 console.log('Yagrs', argv);
 
 console.log('command:', command);
 
 if (command === 'add') {
 
-  console.log('Adding New Notes');
+  notes.addNote(argv.title, argv.body);
 
 } else if (command === 'list') {
-  console.log('Listing of all Notes');
+  notes.getAll();
 
-}else if (command === 'read') {
-  console.log('Reading notes');
-}else if (command === 'remove') {
-  console.log('Removing notes');
-}else {
+} else if (command === 'read') {
+
+  notes.readNote(argv.title);
+} else if (command === 'remove') {
+  notes.removeNote(argv.title);
+} else {
   console.log('command Not Recognize');
 }
 
@@ -54,7 +59,7 @@ if (command === 'add') {
 
 // fs.appendFileSync('greeting.txt',  `Hello ${user.username}! + You are ${notes.age}.`);
 
- //console.log(user);
+//console.log(user);
 
 //fs.appendFile('Hridika.txt', 'I Love you Hridika');
 
